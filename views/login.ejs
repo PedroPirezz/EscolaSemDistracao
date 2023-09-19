@@ -1,0 +1,68 @@
+<%- include ('partials/header.ejs') %>
+
+    <body>
+        <div class="login"><br>
+      
+
+        <% if(testecadastro == 0){ %>
+            
+            <h1><strong>EscolaSemDistração</strong></h1>
+            <h5>Controle do uso de celular</h5>
+            <br><br><br>
+            <h3>Bem Vindo de volta</h3><br><br><br>
+
+
+            <form action="/login" method="post">
+
+                
+
+                <input type="number" class="forminput" placeholder="     Matrícula" name="email" required><br><br>
+
+                
+
+                <input type="password" class="forminput" placeholder="     Senha" name="senha" required><br><br><br><br><br><br>
+
+                
+                <button type="submit" class="botaoenviar"><h2>Entrar</h2></button><br><br><br><br><br>
+
+                
+
+
+                <p>Não tem conta?<a href="TesteCadastro">Registre-se aqui</p></a>
+            </div>
+            </form>
+
+            <% }else{ %>
+
+                <h1>EscolaSemDistração</h1>
+                <h5>Controle do uso de celular</h5>
+                <br>
+                <h3>Seja bem vindo</h3>
+                <br><br>
+                <form action="/SalvarCadastro" method="post">
+                
+
+                <input type="text" placeholder="    Nome" class="forminput" name="nome"><br><br>
+
+                
+
+                <input type="number" placeholder="    Matrícula" class="forminput" name="email"><br><br>
+
+              
+
+                <input type="password" placeholder="    Senha" class="forminput" name="senha"><br><br>
+
+               
+
+                <input type="password" placeholder="    Repita a senha " class="forminput" name="confirmasenha"><br><br><br>
+
+                
+                <button type="submit" class="botaoenviar"><h2>Cadastrar</h2></button>
+                <br><br>
+                </form><br>
+                <a href="Back"><h5>Voltar</h5></a>
+
+                <% } %>
+
+    </body>
+    <%- include ('partials/footer.ejs') %>

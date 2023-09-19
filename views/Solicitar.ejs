@@ -1,0 +1,24 @@
+
+<%- include ('partials/header.ejs') %>
+
+
+    <body>
+      
+
+            <div class="form">
+                <% if(dependencias.testeadm==0){ %>
+
+                    <%- include('partials/Solicitar/TelaUsuarios.ejs') %>
+
+                        <% }else if(dependencias.testeadm==1){ %>
+
+                            <div class="bodyadm">
+                            <%- include('partials/Solicitar/TelaAdm.ejs') %>
+                        </div>
+                                <% } %>
+
+
+
+                                    <%- include ('partials/noti.ejs') %>
+    </body>
+    <%- include ('partials/footer.ejs') %>

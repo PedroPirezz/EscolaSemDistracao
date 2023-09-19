@@ -1,0 +1,118 @@
+<br>
+<h1>EscolaSemDistração</h1>
+<h5>Controle de uso de celular</h5>
+<br>
+
+
+
+<a href="/">Sair</a><br><br>
+
+<div class="alerta">
+
+    <% if(dependencias.estoubloqueado){ %>
+        <br><br><br>
+        <div class="block">
+            <br>
+            <h2>
+                Bloqueado
+            </h2>
+            <h5>Você está temporariamente Bloqueado</h5>
+
+        </div> <br>
+        <p style="color: red;">Caso não esteja ciente do motivo do bloqueio procure a secretaria da
+            escola </p>
+        <br><br>
+        <% }else{ %>
+
+
+
+            <form action="/SalvarSolicitacao" method="post">
+                <label>Motivo</label><br>
+                <select name="motivo" id="motivos">
+
+                   
+
+                    <option value="Motivo pessoais">Motivos Pessoais</option>
+                    <option value="Fins Educacionais">Fins Educacionais</option>
+                    <option value="Questões de Saude">Questões de Saude</option>
+                    <% dependencias.motivos.forEach(element => { %>
+                        <option value=" <%=element.Nome%> "> 
+                            <%=element.Nome %>
+                         </option>
+                     
+                    <% }) %>
+                    <option value="Outro Motivo">Outro Motivo</option>
+
+
+
+                </select><br>
+                <div id="outroMotivoField" style="display: none;">
+                    <br>
+                    <label for="outroMotivo">Especifique o Motivo:</label><br>
+                    <input type="text" class="forminput" id="outroMotivo" name="outroMotivo">
+                </div>
+
+
+                <div class="horarios">
+                    <div class="start">
+                        <label class="time">Inicio</label><br>
+                        <input type="time" class="forminputtime" placeholder="234" name="horainicio"
+                            placeholder="Horario Inicial" required><br>
+                    </div>
+                    <div class="end">
+                        <label class="time">Termino</label><br>
+                        <input type="time" class="forminputtime" name="horatermino"
+                            placeholder="Horario de Termino" required><br><br>
+                    </div>
+                </div><br><br><br>
+                <button id="notificar" type="submit" class="botaoenviar">
+                    <h2>Solicitar</h2>
+                </button>
+
+            </form><br>
+            <% } %>
+</div>
+<br><br><br>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="historico">
+
+<h4>Registros</h4><br>
+<% dependencias.registros.forEach(registros=> { %>
+
+<div class="registro">
+    <br>
+    <h4 class="textostatus">
+       Status: <strong> <%= registros.Status %></strong> <br>
+        Data:<%= registros.DataSolicitacao %> <br> Inicio:<%= registros.Horainicio %> & Fim:<%=
+                    registros.HoraTérmino %> <br> Motivo:<%= registros.Motivo %>
+    </h4><br>
+</div>
+<% }) %>
+</div>
+
+
+
+
+<script>
+const motivoSelect = document.getElementById('motivos');
+const outroMotivoField = document.getElementById('outroMotivoField');
+
+motivoSelect.addEventListener('change', () => {
+if (motivoSelect.value === 'Outro Motivo') {
+    outroMotivoField.style.display = 'block';
+} else {
+    outroMotivoField.style.display = 'none';
+}
+});
+</script>
+
+

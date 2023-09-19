@@ -1,0 +1,458 @@
+*{
+   margin: 0;
+}
+@font-face{
+   font-family: 'minha';
+   src: url(/fonte/Joyride.ttf) ;
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face{
+   font-family: 'mi';
+   src: url(/fonte/Butter.otf) ;
+   font-weight: normal;
+   font-style: normal;
+}
+h1, h2, h3,h4, h6{
+   font-family: 'minha';
+}
+body{
+   width: 100vw;
+   height: 100vh;
+background-color: white;
+}
+.login{
+   position: absolute;
+   width: 80%;
+   height: 70vh;
+   margin-top: 10%;
+   margin-left: 10%;
+   background-color: white;
+   border-radius: 15px;
+}
+
+@media screen and (orientation: portrait) 
+{
+   body{
+      text-align: center;
+   }
+   .forminput
+{
+   padding: 5px;
+   font-size: 5vw;
+   width: 70vw;
+   height: 8vh;
+   border-radius: 30px;
+   background-color: rgb(248, 248, 248);
+   border: transparent;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  
+   
+}
+.bodyadm{
+   width: 100vw;
+   height: 100vh;
+   background-color: red;
+}
+.botaoenviar{
+   border-radius: 30px;
+   width: 70vw;
+   height: 8vh;
+   background-color: rgb(56,102,65, 0.85) ;
+   color: white;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+select{
+   border-radius: 30px;
+   font-size: 5vw;
+   width: 70vw;
+   height: 8vh;
+}
+
+}
+@media screen and (orientation: landscape) 
+
+{
+   
+
+   *{
+      text-align: center
+   }
+   .textostatus{
+      font-size: 2vw;
+   }
+   .forminput
+   {
+      font-size: 1.5vw;
+      width: 30vw;
+      height: 7vh;
+      font-size: 1vw;
+    
+      border-radius: 30px;
+      background-color: rgb(248, 248, 248);
+      border: transparent;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+   }
+   .botaoenviar{
+      
+         border-radius: 30px;
+         width: 30vw;
+         height: 8vh;
+         font-size: 1vw;
+         
+         background-color: rgb(56,102,65, 0.85) ;
+         color: white;
+         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      
+   }
+   select{
+      border-radius: 10px;
+      font-size: 1.5vw;
+      width: 30vw;
+      height: 5vh;
+   }
+
+}
+input{
+   
+   width: 50%;
+   height: 100%;
+   border-radius: 5px;
+ 
+   
+}
+
+:placeholder-shown{
+   text-align: left;
+ 
+}
+.admfull{
+   width: 100%;
+   height: 50%;
+   
+}
+
+.adm{
+display: flex;
+width: 100%;
+height: 100%;
+
+
+
+}
+
+.Bloquear{
+   width: 40%; 
+   height: 90%;
+    text-align: center;
+    margin-left: 6.5%;
+
+border: 2px solid black;
+border-radius: 30px;
+}
+.Bloqueados{
+   margin-left: 6.5%;
+   width: 40%;
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 30px;
+   }
+
+
+.start, .end{
+   width: 50%;
+   height: 100%;
+   margin: 5%;
+ 
+}
+
+.horarios{
+   margin-left: 10%;
+   width: 80%;
+   height: 15vh;
+   display: flex;
+
+}
+.forminputtime{
+   width: 30vw;
+   height: 50%;
+   /* margin-left: 60%; */
+   border-radius: 30px;
+}
+.form{
+   height: 68%;
+}
+.historico {
+   max-height: 300px; /* Altura máxima da div */
+   overflow: auto; /* Habilitar rolagem se o conteúdo exceder a altura máxima */
+   border: 1px solid #ccc; /* Apenas para fins de visualização */
+   padding: 10px; /* Espaçamento interno opcional */
+  
+}
+.registro{
+   font-size: 3vw;
+   border: 2px solid black;
+   
+   border-radius: 30px;
+   margin-top: 5%;
+}
+h1{
+   font-family:'minha';
+}
+h3,p{
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ola{
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 13vw;
+}
+.alerta{
+   width: 100%;
+   height: 12vh;
+   
+
+}
+
+.corpoadm{
+   display: flex;
+   width: 100vw;
+   height: 100vh;
+   
+}
+
+.painellateral{
+   width: 20%;
+   height: 100%;
+   background-color: #454B68;
+
+}
+.conteudo{
+   background-color: #F6F6FB;
+   width: 80%;
+   height: 100%;
+
+}
+.cabecalho{
+   width: 100%;
+   height: 10%;
+   background-color: white;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   font-family: 'mi';
+
+}
+.marca{
+   font-family: 'mi';
+}
+.estastiticas{
+   display: flex;
+   width: 100%;
+   height: 30%;
+  
+
+}
+.corpo{
+   width: 100%;
+   height: 60%;
+   display: flex;
+
+}
+.et1, .et2, .et3, .et4{
+   width: 20%;
+   height: 80%;
+   margin-left: 4%;
+   margin-top: 2%;
+   border-radius: 20px;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.et1{
+background-image:linear-gradient(to right, #FF8F5F,#FF8F5F,#FF8F5F,white);
+}
+.et2{
+   background-image:linear-gradient(to right, #00D184,#00D184,#00D184,white);
+}
+.et3{
+   background-image:linear-gradient(to right, #FF3C6A, #FF3C6A,#FF3C6A,white);
+}
+.et4{
+   background-image:linear-gradient(to right, #00AEAE,#00AEAE,#00AEAE,white);
+}
+
+.corpoleft{
+   margin-top: 2%;
+   margin-left: 5%;
+   width: 67%;
+   height: 80%;
+   background-color: white;
+   border-radius: 20px;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+.corporight{
+   margin-top: 2%;
+   margin-left: 4%;
+   width: 20%;
+   height: 80%;
+   background-color: white;
+   border-radius: 20px; 
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+.logo{
+   width: 100%;
+   height: 10%;
+   background-color: whitesmoke;
+   text-align: center;
+}
+.txtsoli{
+   margin-left: 5%;
+   text-align: left;
+}
+.maesolicitacoes{
+   width: 90%;
+   height: 85%;
+ 
+   margin-left: 5%;
+   max-height: 300px; /* Defina a altura máxima desejada */
+   overflow-y: scroll; /* Habilita a rolagem vertical */
+   overflow-x: hidden; /* Desabilita a rolagem horizontal */
+
+}
+.filhassolicitacoes{
+   text-align: center;
+background-color: aliceblue;
+font-family: 'minha';
+font-size: 1vw;
+border-radius: 10px;
+display: flex;
+}
+.texto{
+width: 70%;
+
+
+}
+.botoes{
+width: 30%;
+display: flex;
+
+}
+.aprovar{
+   margin-left: 20%;
+   margin-top: 3%;
+width: 30%;
+height: 80%;
+background-image:linear-gradient(to right, #00D184,#00D184,#00D184);
+color: white;
+border-radius: 10px;
+}
+.negar{
+   margin-left: 5%;
+   margin-top: 3%;
+   width: 30%;
+   height: 80%;
+   background-image:linear-gradient(to right, #FF3C6A, #FF3C6A,#FF3C6A);
+   color: white;
+   border-radius: 10px;
+}
+.txtbotao{
+   margin-top: 20%;
+}
+.et{
+   color: white;
+   text-align: center;
+   margin-top: 15%;
+   -webkit-text-stroke: 0.000.32px #000; /* Contorno de 2 pixels na cor preta */
+   font-family: 'minha';
+}
+.justificativasmae{
+   text-align: center;
+}
+
+.inputadm{
+   width: 70%;
+   height: 5vh;
+   border-radius: 10px;
+   background-color: aliceblue;
+}
+
+.butadm{
+   text-align: center;
+   width: 30%;
+   color: white;
+   height: 5vh;
+   border-radius: 10px;
+   font-family: 'minha';
+   background-image:linear-gradient(to right, #00D184,#00D184,#00D184);
+   border: transparent;
+}
+.selectadm{
+   width: 80%;
+   font-size: 1vw;
+   font-family: 'minha';
+}
+.optxt{
+   font-family: 'minha';
+   color: white;
+   margin-left: 10%;
+}
+.corpoblock{
+   margin-top: 2%;
+   margin-left: 5%;
+   width: 67%;
+   height: 80%;
+   display: flex;
+}
+.bloquear{
+   text-align: center;
+width: 50%;
+height: 100%;
+background-color: white;
+
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+border-radius: 20px;
+}
+.bloqueados{
+   width: 50%;
+   height: 100%;
+   margin-left: 10%;
+   background-color: white;
+   border-radius: 20px;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.usuariosblock{
+   width: 70%;
+}
+.block{
+   border: 3px solid red;
+   border-radius: 30px;
+   height: 100%;
+   width: 80%;
+   margin-left: 10%;
+}
+.blocklist{
+   width: 100%;
+   height: 55%;
+   max-height: 300px; /* Defina a altura máxima desejada */
+   overflow-y: scroll; /* Habilita a rolagem vertical */
+   overflow-x: hidden; /* Desabilita a rolagem horizontal */
+   
+}
+.bloqueado{
+   border: 2px solid  black;
+   width: 90%;
+   height: 5vh;
+   border-radius: 10px;
+   display: flex;
+   margin-left: 5%;
+}
+
+.pt1{
+width: 70%;
+}
+.pt2{
+   width: 30%;
+}
+h5{
+   margin-left: 5%;
+   margin-top: 4%;
+}

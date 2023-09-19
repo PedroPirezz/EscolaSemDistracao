@@ -1,0 +1,52 @@
+
+
+<script>
+document.getElementById("notificar").addEventListener("click", function() {
+    if (!("Notification" in window)) {
+        alert("Este navegador não suporta notificações.");
+    } else if (Notification.permission === "granted") {
+        var notification = new Notification("Solicitação ENVIADA com Sucesso", {
+            body: "A EscolaSemDistração agradece sua contribuição para uma escola mais atenta",
+            icon: "/img/Aprovar.png"
+        });
+    } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(function (permission) {
+            if (permission === "granted") {
+                var notification = new Notification("Solicitação ENVIADA com Sucesso", {
+                    body: "A EscolaSemDistração agradece sua contribuição para uma escola mais atenta",
+                    icon: "/img/Aprovar.png"
+                });
+            }
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+document.getElementById("noti").addEventListener("click", function() {
+    if (!("Notification" in window)) {
+        alert("Este navegador não suporta notificações.");
+    } else if (Notification.permission === "granted") {
+        var notification = new Notification("  zz foi Bloqueado com Sucesso", {
+            body: "A EscolaSemDistração agradece sua contribuição para uma escola mais atenta",
+            icon: "/img/Aprovar.png"
+        });
+    } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(function (permission) {
+            if (permission === "granted") {
+                var notification = new Notification("  <%=dependencias.retornoBD.Nome %> foi Bloqueado com Sucesso", {
+                    body: "A EscolaSemDistração agradece sua contribuição para uma escola mais atenta",
+                    icon: "/img/Aprovar.png"
+                });
+            }
+        });
+    }
+});
+</script>

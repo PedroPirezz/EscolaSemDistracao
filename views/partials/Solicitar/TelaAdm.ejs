@@ -1,0 +1,209 @@
+
+
+<div class="corpoadm">
+
+    <div class="painellateral">
+
+        <div class="logo"><br>
+            <h1>Menu</h1>
+
+        </div><br><br><br><br>
+        <div class="opcoes">
+           <a href="/Solicitacao"><h3  class="optxt">Pagina Incial</h3></a> <br><hr><br>
+           <a href="/Solicitacao"><h3 class="optxt">Justificativas</h3></a><br><hr><br>
+         <a href="/bl"><h3 class="optxt">Bloquear</h3></a><br><hr><br>
+         <a href="/bl"> <h3 class="optxt">Bloqueados</h3></a><br><hr><br>
+         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr><br>
+         <a href="/"> <h3 class="optxt">Sair</h3></a><br><hr>
+            
+
+        </div>
+
+    </div>
+
+    <div class="conteudo">
+        <div class="cabecalho"><br>
+            <h1 class="marca">Escola Sem Distracao</h1>
+            <h4>Controle do uso de celular</h4>
+        </div>
+
+        <div class="estastiticas">
+            <div class="et1">
+                <h1 class="et">Qtde Usuarios</h1>
+                <h1 class="et"><%= dependencias.retornoBD.length %></h1>
+            </div>
+
+            <div class="et2"> 
+                <h1 class="et">Pendentes</h1>
+                <h1 class="et"><%= dependencias.todasassolicitacoes.length  %></h1>
+
+            </div>
+
+            <div class="et3">
+                <h1 class="et">Negados</h1>
+                <h1 class="et"><%= dependencias.numblock.length  %></h1>
+
+            </div>
+
+           <div class="et4">
+            <h1 class="et">Bloqueados</h1>
+            <h1 class="et"><%= dependencias.retornoBlock.length  %></h1>
+
+            </div>
+        </div>
+
+        <div class="corpo">
+
+            <% if(dependencias.controle ==0 ){ %>
+            <div id="corpoleft" class="corpoleft">
+
+               
+
+
+                <br>
+                <h2 class="txtsoli">Pedidos </h2>
+                <h6 class="txtsoli">Todos os pedidos pendentes</h6>
+
+
+
+
+                <div class="maesolicitacoes">
+
+
+                    <% dependencias.todasassolicitacoes.forEach(element=> {     %>
+                        <br>
+                        <div class="filhassolicitacoes">
+                            <div class="texto">
+                                <br>
+                                <%=element.Nome %>
+                                    <%=element.Datasolicitacao %>|| Inicio:<%=element.Horainicio %> Ate:
+                                            <%=element.HoraTérmino %> <br> Motivo: <%=element.Motivo %> <br>
+                                                  <br>
+                            </div>
+
+                            <div class="botoes">
+                                <div class="aprovar">
+                                  <a href="/aprovar/<%=element.id %>" > <h3 class="txtbotao">O</h3></a> 
+                                </div>
+                                <div class="negar">
+                                    <a href="/negar/<%=element.id %>" > <h3 class="txtbotao">X</h3></a> 
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <% }) %>
+
+                </div>
+
+               
+                  
+
+
+
+                    
+            </div>
+            <% }else if(dependencias.controle == 1) {%>
+
+               
+
+                <div class="corpoblock">
+
+                    <div class="bloquear">
+                        <br>
+                        <h2 class="txtsoli">Bloquear </h2>
+                        <h6 class="txtsoli">Bloqueie qualquer usuario</h6>
+                        <br><br><hr><br><br>
+                        <h4>Selecione o usuario</h4><br><br>
+
+                        <form action="/block" method="post">
+                            <select name="usuariosblock" class="usuariosblock">
+                                <% dependencias.retornoBD.forEach(retornoBD=> { %>
+                                    <option value="<%=retornoBD.id %>">
+                                        <%=retornoBD.Nome %>
+                                    </option>
+    
+                                    <% }) %>
+                            </select><br><br>
+                            <button  id="block" class="butadm" type="submit" value="Bloquear" >Bloquear</button>
+                            
+                        </form>
+
+                    </div>
+
+                    <div class="bloqueados">
+                        <br>
+                        <h2 class="txtsoli">Bloqueados </h2>
+                        <h6 class="txtsoli">Todos usuarios bloqueados </h6>
+                        <br><br><hr><br><br><br>
+                       
+                        <div class="blocklist">
+
+                            <% dependencias.retornoBlock.forEach(retornoBlock=> { %>
+                                <div class="bloqueado">
+                                    <div class="pt1">
+
+                                        
+                                <h5>
+                                     <%= retornoBlock.Nome %>  
+        
+                                </h5>
+                            
+                                
+                                
+                            </div>
+
+                            <div class="pt2">
+                                <a href="/Desbloquear/<%= retornoBlock.id %>"><button class="aprovar">O</button></a>
+                            </div>
+                            </div><br>
+                            <% }) %>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+                <% } %>
+
+            <div class="corporight">
+                <br>
+                <h2 class="txtsoli">Justificativas</h2>
+                <h6 class="txtsoli">Cadastro de Justificativa</h6>
+                <br><br> <hr>
+
+                <div class="justificativasmae">
+
+                    <form action="/novomotivo" method="post">
+                      <br> <input class="inputadm" name="motivo" type="text" placeholder="Justificativa" required>
+                       <br><br> <input class="butadm" type="submit" value="Save">
+                    </form>
+                    <br><hr>
+                    <br><h2 class="txtsoli">Ja cadastradas</h2>
+
+                    <br><select class="selectadm">
+
+                        <% dependencias.motivos.forEach(element=> { %>
+                          
+                                <option value=" <%=element.id %> ">  <%=element.Nome %> </option>
+                            
+
+                            <% }) %>
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>
